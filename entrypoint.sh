@@ -2,19 +2,24 @@
 set -e
 
 # Wait until PostgreSQL is accepting connections.
-echo "Waiting for database at ${DB_HOST:-db}:${DB_PORT:-5432} ..."
+# Uses Django's own resolved DB config, so it works with either DATABASE_URL
+# or the individual DB_* variables.
+echo "Waiting for database ..."
 python <<'PYCODE'
-import os, socket, time
+import os, time
+import django
+from django.db import connections
+from django.db.utils import OperationalError
 
-host = os.getenv("DB_HOST", "db")
-port = int(os.getenv("DB_PORT", "5432"))
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "config.settings")
+django.setup()
 
 for attempt in range(60):
     try:
-        with socket.create_connection((host, port), timeout=2):
-            print("Database is up.")
-            break
-    except OSError:
+        connections["default"].ensure_connection()
+        print("Database is up.")
+        break
+    except OperationalError:
         time.sleep(1)
 else:
     raise SystemExit("Database not reachable after 60s")
