@@ -161,6 +161,10 @@ CORS_ALLOWED_ORIGINS = env_list(
 )
 CORS_ALLOW_CREDENTIALS = True
 
+# Trusted origins for Django's CSRF protection (e.g. the admin login over HTTPS).
+# Must include the scheme, e.g. https://trackora-api.onrender.com
+CSRF_TRUSTED_ORIGINS = env_list('CSRF_TRUSTED_ORIGINS', '')
+
 
 # -----------------------------------------------------------------------------
 # Internationalization
@@ -180,7 +184,10 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
-# WhiteNoise serves static files (incl. the admin) in containers / production.
+# Static files (incl. the admin) are always served by WhiteNoise.
+# Media files (product images) default to local disk, but switch to S3-compatible
+# object storage (AWS S3 / Cloudflare R2 / Supabase Storage) when USE_S3=True —
+# the local disk on most hosts is ephemeral and would lose uploads on redeploy.
 STORAGES = {
     'default': {
         'BACKEND': 'django.core.files.storage.FileSystemStorage',
@@ -189,5 +196,43 @@ STORAGES = {
         'BACKEND': 'whitenoise.storage.CompressedManifestStaticFilesStorage',
     },
 }
+
+USE_S3 = env_bool('USE_S3', 'False')
+if USE_S3:
+    AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY_ID')
+    AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY')
+    AWS_STORAGE_BUCKET_NAME = os.getenv('AWS_STORAGE_BUCKET_NAME')
+    AWS_S3_REGION_NAME = os.getenv('AWS_S3_REGION_NAME', '')
+    # Endpoint URL is required for Cloudflare R2 / Supabase; leave blank for AWS S3.
+    AWS_S3_ENDPOINT_URL = os.getenv('AWS_S3_ENDPOINT_URL', '') or None
+    # Public domain to build media URLs from (e.g. a CDN / R2 public bucket URL).
+    AWS_S3_CUSTOM_DOMAIN = os.getenv('AWS_S3_CUSTOM_DOMAIN', '') or None
+    AWS_QUERYSTRING_AUTH = env_bool('AWS_QUERYSTRING_AUTH', 'False')
+    AWS_DEFAULT_ACL = None
+    AWS_S3_FILE_OVERWRITE = False
+
+    STORAGES['default'] = {
+        'BACKEND': 'storages.backends.s3.S3Storage',
+    }
+
+
+# -----------------------------------------------------------------------------
+# Production security (only enforced when DEBUG=False)
+# -----------------------------------------------------------------------------
+if not DEBUG:
+    # Render (and most PaaS) terminate TLS at a proxy and forward this header.
+    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+    SECURE_SSL_REDIRECT = env_bool('SECURE_SSL_REDIRECT', 'True')
+
+    SESSION_COOKIE_SECURE = True
+    CSRF_COOKIE_SECURE = True
+
+    # HSTS — start small, then raise once you're confident HTTPS is stable.
+    SECURE_HSTS_SECONDS = int(os.getenv('SECURE_HSTS_SECONDS', '3600'))
+    SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+    SECURE_HSTS_PRELOAD = True
+
+    SECURE_CONTENT_TYPE_NOSNIFF = True
+
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

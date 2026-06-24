@@ -13,20 +13,30 @@ customised Django admin, and a full Docker setup.
 
 ## Table of Contents
 
-- [Tech Stack](#tech-stack)
-- [Features](#features)
-- [Prerequisites](#prerequisites)
-- [Folder Structure](#folder-structure)
-- [Environment Variables](#environment-variables)
-- [Database Setup](#database-setup)
-- [Installation & Running (Local)](#installation--running-local)
-- [Running with Docker](#running-with-docker)
-- [Default Accounts](#default-accounts)
-- [User Roles & Permissions](#user-roles--permissions)
-- [API Endpoint Summary](#api-endpoint-summary)
-- [Authentication Flow](#authentication-flow)
-- [Business Logic Notes](#business-logic-notes)
-- [Admin Site](#admin-site)
+- [Trackora — Hardware Store Management Backend](#trackora--hardware-store-management-backend)
+  - [Table of Contents](#table-of-contents)
+  - [Tech Stack](#tech-stack)
+  - [Features](#features)
+  - [Prerequisites](#prerequisites)
+  - [Folder Structure](#folder-structure)
+  - [Environment Variables](#environment-variables)
+  - [Database Setup](#database-setup)
+  - [Installation \& Running (Local)](#installation--running-local)
+  - [Running with Docker](#running-with-docker)
+  - [Default Accounts](#default-accounts)
+  - [User Roles \& Permissions](#user-roles--permissions)
+  - [API Endpoint Summary](#api-endpoint-summary)
+    - [Authentication \& Users — `/api/auth/`](#authentication--users--apiauth)
+    - [Inventory — `/api/`](#inventory--api)
+    - [Stock — `/api/`](#stock--api)
+    - [Sales — `/api/`](#sales--api)
+    - [Reports — `/api/reports/`](#reports--apireports)
+  - [Authentication Flow](#authentication-flow)
+    - [Example: creating a product](#example-creating-a-product)
+    - [Example: creating an order (auto-deducts stock)](#example-creating-an-order-auto-deducts-stock)
+  - [Business Logic Notes](#business-logic-notes)
+  - [Admin Site](#admin-site)
+  - [License](#license)
 
 ---
 
@@ -430,5 +440,4 @@ Stock and order records are read-only in the admin so their quantity side-effect
 
 ## License
 
-Proprietary — © Trackora. All rights reserved. Unauthorized copying, distribution, or use of this
-software is prohibited without prior written permission.
+Proprietary — © Trackora. All rights reserved.
