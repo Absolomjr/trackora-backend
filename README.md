@@ -113,34 +113,28 @@ Each app follows the standard Django layout (`models.py`, `serializers.py`, `vie
 
 ## Environment Variables
 
-Configuration is loaded from a `.env` file at the project root (via `python-dotenv`). Create one
-based on the template below:
+Configuration is loaded from a `.env` file at the project root (via `python-dotenv`). A
+template is provided as `.env.example` — copy it and fill in your own values:
 
-```env
-SECRET_KEY=change-me-to-a-long-random-string
-DEBUG=True
-ALLOWED_HOSTS=localhost,127.0.0.1
-
-# PostgreSQL
-DB_NAME=trackora_db
-DB_USER=postgres
-DB_PASSWORD=postgres
-DB_HOST=localhost
-DB_PORT=5432
-
-# CORS — React dev servers
-CORS_ALLOWED_ORIGINS=http://localhost:3000,http://localhost:5173,http://127.0.0.1:3000,http://127.0.0.1:5173
+```bash
+cp .env.example .env
 ```
 
-| Variable               | Description                                              |
-|------------------------|----------------------------------------------------------|
-| `SECRET_KEY`           | Django secret key. **Use a unique value in production.** |
-| `DEBUG`                | `True` for development, `False` for production.          |
-| `ALLOWED_HOSTS`        | Comma-separated hostnames allowed to serve the app.      |
-| `DB_*`                 | PostgreSQL connection details.                           |
-| `CORS_ALLOWED_ORIGINS` | Comma-separated frontend origins permitted via CORS.     |
+Generate a strong `SECRET_KEY`:
 
-> **Note:** `.env` is git-ignored. Never commit real secrets.
+```bash
+python -c "from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())"
+```
+
+- **`SECRET_KEY`** — Django cryptographic key. Use a unique, generated value per environment.
+- **`DEBUG`** — `True` for development, `False` for production.
+- **`ALLOWED_HOSTS`** — comma-separated hostnames allowed to serve the app.
+- **`DB_NAME` / `DB_USER` / `DB_PASSWORD` / `DB_HOST` / `DB_PORT`** — PostgreSQL connection details.
+- **`CORS_ALLOWED_ORIGINS`** — comma-separated frontend origins permitted via CORS.
+
+> **Security:** `.env` is git-ignored — only `.env.example` (with placeholder values) is committed.
+> Never commit real secrets, and always set a strong `SECRET_KEY`, a non-default database password,
+> and `DEBUG=False` in production.
 
 ---
 
@@ -250,15 +244,15 @@ Once running, the API is at **http://localhost:8000/**.
 
 ## Default Accounts
 
-There are no pre-seeded accounts — you create the first admin yourself with `createsuperuser`.
-During development the following admin was used (change it for your own setup):
+The project ships with **no pre-seeded accounts**. Create the first administrator yourself:
 
-| Email                   | Password       | Role  |
-|-------------------------|----------------|-------|
-| `admin@trackora.com`    | `Admin12345!`  | Admin |
+```bash
+python manage.py createsuperuser
+```
 
-Additional Manager/Staff users can be created by an Admin via `POST /api/auth/register/` or the
-`/api/auth/users/` endpoint.
+You'll be prompted for an email and password — choose a strong password. This account has the
+**Admin** role and full access. Once it exists, additional **Manager** and **Staff** users can be
+created by an Admin via `POST /api/auth/register/` or the `/api/auth/users/` endpoint.
 
 ---
 
@@ -355,7 +349,7 @@ Base URL: `http://localhost:8000`
    POST /api/auth/login/
    Content-Type: application/json
 
-   { "email": "admin@trackora.com", "password": "Admin12345!" }
+   { "email": "you@example.com", "password": "your-password" }
    ```
 
    Response:
@@ -364,7 +358,7 @@ Base URL: `http://localhost:8000`
    {
      "refresh": "<refresh_token>",
      "access": "<access_token>",
-     "user": { "id": 1, "email": "admin@trackora.com", "role": "admin", ... }
+     "user": { "id": 1, "email": "you@example.com", "role": "admin", ... }
    }
    ```
 
@@ -436,4 +430,5 @@ Stock and order records are read-only in the admin so their quantity side-effect
 
 ## License
 
-This project is provided for the Trackora hardware store management system.
+Proprietary — © Trackora. All rights reserved. Unauthorized copying, distribution, or use of this
+software is prohibited without prior written permission.
