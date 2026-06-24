@@ -1,22 +1,31 @@
-"""
-URL configuration for config project.
-
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/6.0/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  path('', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
-Including another URLconf
-    1. Import the include() function: from django.urls import include, path
-    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
-"""
+"""Root URL configuration for the Trackora backend."""
+from django.conf import settings
+from django.conf.urls.static import static
 from django.contrib import admin
-from django.urls import path
+from django.http import JsonResponse
+from django.urls import include, path
+
+
+def health(request):
+    return JsonResponse({'status': 'ok', 'service': 'trackora-backend'})
+
 
 urlpatterns = [
+    path('', health, name='health'),
     path('admin/', admin.site.urls),
+
+    # Auth & user management
+    path('api/auth/', include('apps.accounts.urls')),
+
+    # Core resources
+    path('api/', include('apps.inventory.urls')),   # categories, suppliers, products
+    path('api/', include('apps.stock.urls')),       # stock-in, stock-out
+    path('api/', include('apps.sales.urls')),       # customers, orders
+
+    # Reporting
+    path('api/reports/', include('apps.reports.urls')),
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
