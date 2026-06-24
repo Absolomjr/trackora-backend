@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Virtual env (use the image's own deps)
+venv/
+env/
+.venv/
+
+# Local dev artifacts
+db.sqlite3
+*.log
+.git/
+.gitignore
+.idea/
+.vscode/
+
+# Collected static & media (rebuilt/persisted via volumes)
+staticfiles/
+media/
+
+# Docs / misc
+*.md

@@ -1,0 +1,46 @@
+services:
+  db:
+    image: postgres:16
+    container_name: trackora_db
+    environment:
+      POSTGRES_DB: trackora_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    ports:
+      # Host 5433 -> container 5432 so it won't clash with a local Postgres on 5432
+      - "5433:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d trackora_db"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  web:
+    build: .
+    container_name: trackora_web
+    env_file:
+      - .env
+    environment:
+      # Override .env so the app talks to the compose "db" service, not localhost
+      DB_HOST: db
+      DB_PORT: 5432
+      DB_NAME: trackora_db
+      DB_USER: postgres
+      DB_PASSWORD: postgres
+      DEBUG: "False"
+      ALLOWED_HOSTS: "localhost,127.0.0.1,0.0.0.0,web"
+    volumes:
+      - media:/app/media
+      - static:/app/staticfiles
+    ports:
+      - "8000:8000"
+    depends_on:
+      db:
+        condition: service_healthy
+
+volumes:
+  pgdata:
+  media:
+  static:
