@@ -28,6 +28,8 @@ PYCODE
 # Apply migrations and collect static assets.
 echo "Running migrations ..."
 python manage.py migrate --noinput
+python manage.py createsuperuser --noinput || true
+
 
 echo "Collecting static files ..."
 python manage.py collectstatic --noinput
