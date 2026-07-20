@@ -59,6 +59,7 @@ LOCAL_APPS = [
     'apps.stock',
     'apps.sales',
     'apps.reports',
+    'apps.leads',
 ]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
@@ -155,6 +156,11 @@ REST_FRAMEWORK = {
     ),
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 20,
+    # The public marketing form is the only anonymous write surface; scope its
+    # throttle narrowly rather than opening a global anon rate.
+    'DEFAULT_THROTTLE_RATES': {
+        'lead': os.getenv('LEAD_THROTTLE_RATE', '10/hour'),
+    },
 }
 
 SIMPLE_JWT = {
