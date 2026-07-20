@@ -1,0 +1,1123 @@
+[
+{
+  "model": "accounts.user",
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$TXXOYX982hMbImk4qOZMyG$QDULV62lPuGzPkIQSP4EDaxrxiIGoha+fwCzoNkPUdU=",
+    "last_login": "2026-06-25T11:50:25Z",
+    "is_superuser": true,
+    "first_name": "Absolom",
+    "last_name": "Orianga",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2026-06-25T10:35:18Z",
+    "email": "absolom@trackora.com",
+    "phone": "0754610909",
+    "role": "admin",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.user",
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$AyJeaHmVXvlS5r8p0GQnvO$G7/G9KH6uT4gbCe4KOR2/fSn/Lc+67b1+O2nvvIJrKs=",
+    "last_login": null,
+    "is_superuser": false,
+    "first_name": "Maurice",
+    "last_name": "Okurut",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2026-06-25T11:52:44Z",
+    "email": "maurice@trackora.com",
+    "phone": "",
+    "role": "admin",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "inventory.category",
+  "pk": 1,
+  "fields": {
+    "name": "Cement",
+    "slug": "cement",
+    "description": "Building cement, all brands",
+    "is_active": true,
+    "created_at": "2026-06-26T10:16:07.151Z",
+    "updated_at": "2026-06-26T13:34:23.051Z"
+  }
+},
+{
+  "model": "inventory.category",
+  "pk": 2,
+  "fields": {
+    "name": "Iron Sheets",
+    "slug": "iron-sheets",
+    "description": "Roofing Iron Sheets",
+    "is_active": true,
+    "created_at": "2026-06-26T10:16:27.433Z",
+    "updated_at": "2026-06-26T10:16:27.433Z"
+  }
+},
+{
+  "model": "inventory.category",
+  "pk": 3,
+  "fields": {
+    "name": "Paint",
+    "slug": "paint",
+    "description": "Interior and Exterior Paints",
+    "is_active": true,
+    "created_at": "2026-06-26T10:16:50.244Z",
+    "updated_at": "2026-06-26T10:16:50.244Z"
+  }
+},
+{
+  "model": "inventory.category",
+  "pk": 4,
+  "fields": {
+    "name": "Pipes",
+    "slug": "pipes",
+    "description": "PVC and PPR piping",
+    "is_active": true,
+    "created_at": "2026-06-26T10:17:18.416Z",
+    "updated_at": "2026-06-26T10:17:18.416Z"
+  }
+},
+{
+  "model": "inventory.category",
+  "pk": 5,
+  "fields": {
+    "name": "Tiles",
+    "slug": "tiles",
+    "description": "Floor and wall tiles",
+    "is_active": true,
+    "created_at": "2026-06-26T10:17:39.799Z",
+    "updated_at": "2026-06-26T10:17:39.799Z"
+  }
+},
+{
+  "model": "inventory.category",
+  "pk": 6,
+  "fields": {
+    "name": "Nails & Fasteners",
+    "slug": "nails-fasteners",
+    "description": "Nails, screws, bolts",
+    "is_active": true,
+    "created_at": "2026-06-26T10:18:18.427Z",
+    "updated_at": "2026-06-26T10:18:18.427Z"
+  }
+},
+{
+  "model": "inventory.category",
+  "pk": 7,
+  "fields": {
+    "name": "Electrical Cables",
+    "slug": "electrical-cables",
+    "description": "Wiring Cables",
+    "is_active": true,
+    "created_at": "2026-06-26T10:18:41.151Z",
+    "updated_at": "2026-06-26T10:18:41.151Z"
+  }
+},
+{
+  "model": "inventory.category",
+  "pk": 8,
+  "fields": {
+    "name": "Plumbing",
+    "slug": "plumbing",
+    "description": "Valves, fittings, joints",
+    "is_active": true,
+    "created_at": "2026-06-26T10:19:04.999Z",
+    "updated_at": "2026-06-26T10:19:04.999Z"
+  }
+},
+{
+  "model": "inventory.category",
+  "pk": 9,
+  "fields": {
+    "name": "Tools",
+    "slug": "tools",
+    "description": "Hand tools & Equipment",
+    "is_active": true,
+    "created_at": "2026-06-26T10:19:28.166Z",
+    "updated_at": "2026-06-26T10:19:28.166Z"
+  }
+},
+{
+  "model": "inventory.supplier",
+  "pk": 1,
+  "fields": {
+    "name": "Hima Cement Ltd",
+    "contact_person": "Robert Aine",
+    "email": "sales@hima.co.ug",
+    "phone": "0312 200100",
+    "address": "Kampala",
+    "is_active": true,
+    "created_at": "2026-06-26T11:10:19.826Z",
+    "updated_at": "2026-06-26T11:10:19.826Z"
+  }
+},
+{
+  "model": "inventory.supplier",
+  "pk": 2,
+  "fields": {
+    "name": "Tororo Cement Company Ltd",
+    "contact_person": "Grace Apio",
+    "email": "orders@tororocement.com",
+    "phone": "0414 345600",
+    "address": "Tororo",
+    "is_active": true,
+    "created_at": "2026-06-26T11:10:22.011Z",
+    "updated_at": "2026-06-26T11:10:22.011Z"
+  }
+},
+{
+  "model": "inventory.supplier",
+  "pk": 3,
+  "fields": {
+    "name": "Roofings Group",
+    "contact_person": "Peter Okwir",
+    "email": "info@roofings.co.ug",
+    "phone": "0312 233444",
+    "address": "Lubowa, Kampala",
+    "is_active": true,
+    "created_at": "2026-06-26T11:10:24.283Z",
+    "updated_at": "2026-06-26T11:10:24.283Z"
+  }
+},
+{
+  "model": "inventory.supplier",
+  "pk": 4,
+  "fields": {
+    "name": "Uganda Baati Ltd",
+    "contact_person": "Mary Adeke",
+    "email": "sales@ugandabaati.com",
+    "phone": "0417 718000",
+    "address": "Industrial Area, Kampala",
+    "is_active": true,
+    "created_at": "2026-06-26T11:10:26.457Z",
+    "updated_at": "2026-06-26T11:10:26.457Z"
+  }
+},
+{
+  "model": "inventory.supplier",
+  "pk": 5,
+  "fields": {
+    "name": "Sadolin Paints Uganda",
+    "contact_person": "Joseph Mwesigwa",
+    "email": "care@sadolin.co.ug",
+    "phone": "0414 251400",
+    "address": "Kampala",
+    "is_active": true,
+    "created_at": "2026-06-26T11:10:28.589Z",
+    "updated_at": "2026-06-26T11:10:28.589Z"
+  }
+},
+{
+  "model": "inventory.supplier",
+  "pk": 6,
+  "fields": {
+    "name": "Nice House of Plastics",
+    "contact_person": "Hassan Lubega",
+    "email": "sales@nice.co.ug",
+    "phone": "0414 567200",
+    "address": "Kampala",
+    "is_active": true,
+    "created_at": "2026-06-26T11:10:30.757Z",
+    "updated_at": "2026-06-26T11:10:30.757Z"
+  }
+},
+{
+  "model": "inventory.supplier",
+  "pk": 7,
+  "fields": {
+    "name": "East African Cables Ltd",
+    "contact_person": "Daniel Otim",
+    "email": "sales@eacables.co.ug",
+    "phone": "0312 260700",
+    "address": "Industrial Area, Kampala",
+    "is_active": true,
+    "created_at": "2026-06-26T11:10:33.052Z",
+    "updated_at": "2026-06-26T11:10:33.052Z"
+  }
+},
+{
+  "model": "inventory.supplier",
+  "pk": 8,
+  "fields": {
+    "name": "Hardware World Ltd",
+    "contact_person": "Sam Kato",
+    "email": "hardwareworld@gmail.com",
+    "phone": "0772 808090",
+    "address": "Kisenyi, Kampala",
+    "is_active": true,
+    "created_at": "2026-06-26T11:10:35.272Z",
+    "updated_at": "2026-06-26T11:10:35.272Z"
+  }
+},
+{
+  "model": "inventory.product",
+  "pk": 1,
+  "fields": {
+    "name": "Hima Cement 50kg",
+    "sku": "CEM-001",
+    "category": 1,
+    "supplier": 1,
+    "description": "",
+    "unit": "bag",
+    "cost_price": "28000.00",
+    "selling_price": "33000.00",
+    "quantity": 65,
+    "reorder_level": 20,
+    "image": "",
+    "is_active": true,
+    "created_at": "2026-06-26T11:10:39.703Z",
+    "updated_at": "2026-06-26T11:10:39.703Z"
+  }
+},
+{
+  "model": "inventory.product",
+  "pk": 2,
+  "fields": {
+    "name": "Tororo Cement 50kg",
+    "sku": "CEM-002",
+    "category": 1,
+    "supplier": 2,
+    "description": "",
+    "unit": "bag",
+    "cost_price": "27000.00",
+    "selling_price": "32000.00",
+    "quantity": 100,
+    "reorder_level": 20,
+    "image": "",
+    "is_active": true,
+    "created_at": "2026-06-26T11:10:41.946Z",
+    "updated_at": "2026-06-26T11:10:41.946Z"
+  }
+},
+{
+  "model": "inventory.product",
+  "pk": 3,
+  "fields": {
+    "name": "Gauge 30 Iron Sheet 3m",
+    "sku": "IRS-001",
+    "category": 2,
+    "supplier": 3,
+    "description": "",
+    "unit": "sheet",
+    "cost_price": "38000.00",
+    "selling_price": "45000.00",
+    "quantity": 58,
+    "reorder_level": 15,
+    "image": "",
+    "is_active": true,
+    "created_at": "2026-06-26T11:10:44.216Z",
+    "updated_at": "2026-06-26T11:10:44.216Z"
+  }
+},
+{
+  "model": "inventory.product",
+  "pk": 4,
+  "fields": {
+    "name": "Gauge 28 Iron Sheet 3m",
+    "sku": "IRS-002",
+    "category": 2,
+    "supplier": 4,
+    "description": "",
+    "unit": "sheet",
+    "cost_price": "52000.00",
+    "selling_price": "60000.00",
+    "quantity": 30,
+    "reorder_level": 15,
+    "image": "",
+    "is_active": true,
+    "created_at": "2026-06-26T11:10:46.351Z",
+    "updated_at": "2026-06-26T11:10:46.351Z"
+  }
+},
+{
+  "model": "inventory.product",
+  "pk": 5,
+  "fields": {
+    "name": "Sadolin Super Gloss White 4L",
+    "sku": "PNT-001",
+    "category": 3,
+    "supplier": 5,
+    "description": "",
+    "unit": "piece",
+    "cost_price": "45000.00",
+    "selling_price": "55000.00",
+    "quantity": 39,
+    "reorder_level": 10,
+    "image": "",
+    "is_active": true,
+    "created_at": "2026-06-26T11:10:48.474Z",
+    "updated_at": "2026-06-26T11:10:48.474Z"
+  }
+},
+{
+  "model": "inventory.product",
+  "pk": 6,
+  "fields": {
+    "name": "Sadolin Matt Emulsion 20L",
+    "sku": "PNT-002",
+    "category": 3,
+    "supplier": 5,
+    "description": "",
+    "unit": "piece",
+    "cost_price": "120000.00",
+    "selling_price": "145000.00",
+    "quantity": 25,
+    "reorder_level": 8,
+    "image": "",
+    "is_active": true,
+    "created_at": "2026-06-26T11:10:50.706Z",
+    "updated_at": "2026-06-26T11:10:50.706Z"
+  }
+},
+{
+  "model": "inventory.product",
+  "pk": 7,
+  "fields": {
+    "name": "PVC Pipe 1\" x 6m",
+    "sku": "PIP-001",
+    "category": 4,
+    "supplier": 6,
+    "description": "",
+    "unit": "piece",
+    "cost_price": "12000.00",
+    "selling_price": "16000.00",
+    "quantity": 150,
+    "reorder_level": 25,
+    "image": "",
+    "is_active": true,
+    "created_at": "2026-06-26T11:10:52.908Z",
+    "updated_at": "2026-06-26T11:10:52.908Z"
+  }
+},
+{
+  "model": "inventory.product",
+  "pk": 8,
+  "fields": {
+    "name": "PPR Pipe 20mm x 4m",
+    "sku": "PIP-002",
+    "category": 4,
+    "supplier": 6,
+    "description": "",
+    "unit": "piece",
+    "cost_price": "9000.00",
+    "selling_price": "13000.00",
+    "quantity": 120,
+    "reorder_level": 25,
+    "image": "",
+    "is_active": true,
+    "created_at": "2026-06-26T11:10:55.071Z",
+    "updated_at": "2026-06-26T11:10:55.071Z"
+  }
+},
+{
+  "model": "inventory.product",
+  "pk": 9,
+  "fields": {
+    "name": "Ceramic Floor Tile 60x60 (carton)",
+    "sku": "TIL-001",
+    "category": 5,
+    "supplier": 8,
+    "description": "",
+    "unit": "box",
+    "cost_price": "35000.00",
+    "selling_price": "45000.00",
+    "quantity": 80,
+    "reorder_level": 20,
+    "image": "",
+    "is_active": true,
+    "created_at": "2026-06-26T11:10:57.233Z",
+    "updated_at": "2026-06-26T11:10:57.233Z"
+  }
+},
+{
+  "model": "inventory.product",
+  "pk": 10,
+  "fields": {
+    "name": "Wall Tile 30x60 (carton)",
+    "sku": "TIL-002",
+    "category": 5,
+    "supplier": 8,
+    "description": "",
+    "unit": "box",
+    "cost_price": "28000.00",
+    "selling_price": "38000.00",
+    "quantity": 68,
+    "reorder_level": 20,
+    "image": "",
+    "is_active": true,
+    "created_at": "2026-06-26T11:10:59.429Z",
+    "updated_at": "2026-06-26T11:10:59.429Z"
+  }
+},
+{
+  "model": "inventory.product",
+  "pk": 11,
+  "fields": {
+    "name": "Wire Nails 3 inch",
+    "sku": "NAL-001",
+    "category": 6,
+    "supplier": 8,
+    "description": "",
+    "unit": "kg",
+    "cost_price": "5000.00",
+    "selling_price": "7000.00",
+    "quantity": 117,
+    "reorder_level": 50,
+    "image": "",
+    "is_active": true,
+    "created_at": "2026-06-26T11:11:01.729Z",
+    "updated_at": "2026-06-26T11:11:01.729Z"
+  }
+},
+{
+  "model": "inventory.product",
+  "pk": 12,
+  "fields": {
+    "name": "Roofing Nails 2.5 inch",
+    "sku": "NAL-002",
+    "category": 6,
+    "supplier": 3,
+    "description": "",
+    "unit": "kg",
+    "cost_price": "6000.00",
+    "selling_price": "8500.00",
+    "quantity": 80,
+    "reorder_level": 50,
+    "image": "",
+    "is_active": true,
+    "created_at": "2026-06-26T11:11:04.083Z",
+    "updated_at": "2026-06-26T11:11:04.083Z"
+  }
+},
+{
+  "model": "inventory.product",
+  "pk": 13,
+  "fields": {
+    "name": "Twin & Earth Cable 1.5mm (100m)",
+    "sku": "CAB-001",
+    "category": 7,
+    "supplier": 7,
+    "description": "",
+    "unit": "roll",
+    "cost_price": "150000.00",
+    "selling_price": "180000.00",
+    "quantity": 30,
+    "reorder_level": 10,
+    "image": "",
+    "is_active": true,
+    "created_at": "2026-06-26T11:11:06.255Z",
+    "updated_at": "2026-06-26T11:11:06.255Z"
+  }
+},
+{
+  "model": "inventory.product",
+  "pk": 14,
+  "fields": {
+    "name": "Single Core Cable 2.5mm (100m)",
+    "sku": "CAB-002",
+    "category": 7,
+    "supplier": 7,
+    "description": "",
+    "unit": "roll",
+    "cost_price": "210000.00",
+    "selling_price": "250000.00",
+    "quantity": 20,
+    "reorder_level": 10,
+    "image": "",
+    "is_active": true,
+    "created_at": "2026-06-26T11:11:08.582Z",
+    "updated_at": "2026-06-26T11:11:08.582Z"
+  }
+},
+{
+  "model": "inventory.product",
+  "pk": 15,
+  "fields": {
+    "name": "Gate Valve 1\"",
+    "sku": "PLM-001",
+    "category": 8,
+    "supplier": 6,
+    "description": "",
+    "unit": "piece",
+    "cost_price": "15000.00",
+    "selling_price": "20000.00",
+    "quantity": 40,
+    "reorder_level": 15,
+    "image": "",
+    "is_active": true,
+    "created_at": "2026-06-26T11:11:10.747Z",
+    "updated_at": "2026-06-26T11:11:10.747Z"
+  }
+},
+{
+  "model": "inventory.product",
+  "pk": 16,
+  "fields": {
+    "name": "PVC Elbow 1\"",
+    "sku": "PLM-002",
+    "category": 8,
+    "supplier": 6,
+    "description": "",
+    "unit": "piece",
+    "cost_price": "1500.00",
+    "selling_price": "2500.00",
+    "quantity": 400,
+    "reorder_level": 100,
+    "image": "",
+    "is_active": true,
+    "created_at": "2026-06-26T11:11:12.941Z",
+    "updated_at": "2026-06-26T11:11:12.941Z"
+  }
+},
+{
+  "model": "inventory.product",
+  "pk": 17,
+  "fields": {
+    "name": "Claw Hammer",
+    "sku": "TOOL-001",
+    "category": 9,
+    "supplier": 8,
+    "description": "",
+    "unit": "piece",
+    "cost_price": "12000.00",
+    "selling_price": "18000.00",
+    "quantity": 24,
+    "reorder_level": 10,
+    "image": "",
+    "is_active": true,
+    "created_at": "2026-06-26T11:11:15.124Z",
+    "updated_at": "2026-06-26T11:11:15.124Z"
+  }
+},
+{
+  "model": "inventory.product",
+  "pk": 18,
+  "fields": {
+    "name": "Wheelbarrow",
+    "sku": "TOOL-002",
+    "category": 9,
+    "supplier": 8,
+    "description": "",
+    "unit": "piece",
+    "cost_price": "95000.00",
+    "selling_price": "120000.00",
+    "quantity": 12,
+    "reorder_level": 5,
+    "image": "",
+    "is_active": true,
+    "created_at": "2026-06-26T11:11:17.344Z",
+    "updated_at": "2026-06-26T11:11:17.344Z"
+  }
+},
+{
+  "model": "stock.stockin",
+  "pk": 1,
+  "fields": {
+    "reference": "SIN-20260626-0001",
+    "supplier": 1,
+    "note": "Initial stock - Hima Cement Ltd",
+    "created_by": [
+      "absolom@trackora.com"
+    ],
+    "created_at": "2026-06-26T11:11:21.666Z"
+  }
+},
+{
+  "model": "stock.stockin",
+  "pk": 2,
+  "fields": {
+    "reference": "SIN-20260626-0002",
+    "supplier": 2,
+    "note": "Initial stock - Tororo Cement Company Ltd",
+    "created_by": [
+      "absolom@trackora.com"
+    ],
+    "created_at": "2026-06-26T11:11:23.902Z"
+  }
+},
+{
+  "model": "stock.stockin",
+  "pk": 3,
+  "fields": {
+    "reference": "SIN-20260626-0003",
+    "supplier": 3,
+    "note": "Initial stock - Roofings Group",
+    "created_by": [
+      "absolom@trackora.com"
+    ],
+    "created_at": "2026-06-26T11:11:26.104Z"
+  }
+},
+{
+  "model": "stock.stockin",
+  "pk": 4,
+  "fields": {
+    "reference": "SIN-20260626-0004",
+    "supplier": 4,
+    "note": "Initial stock - Uganda Baati Ltd",
+    "created_by": [
+      "absolom@trackora.com"
+    ],
+    "created_at": "2026-06-26T11:11:28.271Z"
+  }
+},
+{
+  "model": "stock.stockin",
+  "pk": 5,
+  "fields": {
+    "reference": "SIN-20260626-0005",
+    "supplier": 5,
+    "note": "Initial stock - Sadolin Paints Uganda",
+    "created_by": [
+      "absolom@trackora.com"
+    ],
+    "created_at": "2026-06-26T11:11:30.542Z"
+  }
+},
+{
+  "model": "stock.stockin",
+  "pk": 6,
+  "fields": {
+    "reference": "SIN-20260626-0006",
+    "supplier": 6,
+    "note": "Initial stock - Nice House of Plastics",
+    "created_by": [
+      "absolom@trackora.com"
+    ],
+    "created_at": "2026-06-26T11:11:32.716Z"
+  }
+},
+{
+  "model": "stock.stockin",
+  "pk": 7,
+  "fields": {
+    "reference": "SIN-20260626-0007",
+    "supplier": 8,
+    "note": "Initial stock - Hardware World Ltd",
+    "created_by": [
+      "absolom@trackora.com"
+    ],
+    "created_at": "2026-06-26T11:11:35.027Z"
+  }
+},
+{
+  "model": "stock.stockin",
+  "pk": 8,
+  "fields": {
+    "reference": "SIN-20260626-0008",
+    "supplier": 7,
+    "note": "Initial stock - East African Cables Ltd",
+    "created_by": [
+      "absolom@trackora.com"
+    ],
+    "created_at": "2026-06-26T11:11:37.192Z"
+  }
+},
+{
+  "model": "stock.stockinitem",
+  "pk": 1,
+  "fields": {
+    "stock_in": 1,
+    "product": 1,
+    "quantity": 120,
+    "unit_cost": "28000.00"
+  }
+},
+{
+  "model": "stock.stockinitem",
+  "pk": 2,
+  "fields": {
+    "stock_in": 2,
+    "product": 2,
+    "quantity": 100,
+    "unit_cost": "27000.00"
+  }
+},
+{
+  "model": "stock.stockinitem",
+  "pk": 3,
+  "fields": {
+    "stock_in": 3,
+    "product": 3,
+    "quantity": 60,
+    "unit_cost": "38000.00"
+  }
+},
+{
+  "model": "stock.stockinitem",
+  "pk": 4,
+  "fields": {
+    "stock_in": 3,
+    "product": 12,
+    "quantity": 80,
+    "unit_cost": "6000.00"
+  }
+},
+{
+  "model": "stock.stockinitem",
+  "pk": 5,
+  "fields": {
+    "stock_in": 4,
+    "product": 4,
+    "quantity": 50,
+    "unit_cost": "52000.00"
+  }
+},
+{
+  "model": "stock.stockinitem",
+  "pk": 6,
+  "fields": {
+    "stock_in": 5,
+    "product": 5,
+    "quantity": 40,
+    "unit_cost": "45000.00"
+  }
+},
+{
+  "model": "stock.stockinitem",
+  "pk": 7,
+  "fields": {
+    "stock_in": 5,
+    "product": 6,
+    "quantity": 25,
+    "unit_cost": "120000.00"
+  }
+},
+{
+  "model": "stock.stockinitem",
+  "pk": 8,
+  "fields": {
+    "stock_in": 6,
+    "product": 7,
+    "quantity": 150,
+    "unit_cost": "12000.00"
+  }
+},
+{
+  "model": "stock.stockinitem",
+  "pk": 9,
+  "fields": {
+    "stock_in": 6,
+    "product": 8,
+    "quantity": 120,
+    "unit_cost": "9000.00"
+  }
+},
+{
+  "model": "stock.stockinitem",
+  "pk": 10,
+  "fields": {
+    "stock_in": 6,
+    "product": 15,
+    "quantity": 40,
+    "unit_cost": "15000.00"
+  }
+},
+{
+  "model": "stock.stockinitem",
+  "pk": 11,
+  "fields": {
+    "stock_in": 6,
+    "product": 16,
+    "quantity": 500,
+    "unit_cost": "1500.00"
+  }
+},
+{
+  "model": "stock.stockinitem",
+  "pk": 12,
+  "fields": {
+    "stock_in": 7,
+    "product": 9,
+    "quantity": 80,
+    "unit_cost": "35000.00"
+  }
+},
+{
+  "model": "stock.stockinitem",
+  "pk": 13,
+  "fields": {
+    "stock_in": 7,
+    "product": 10,
+    "quantity": 70,
+    "unit_cost": "28000.00"
+  }
+},
+{
+  "model": "stock.stockinitem",
+  "pk": 14,
+  "fields": {
+    "stock_in": 7,
+    "product": 11,
+    "quantity": 120,
+    "unit_cost": "5000.00"
+  }
+},
+{
+  "model": "stock.stockinitem",
+  "pk": 15,
+  "fields": {
+    "stock_in": 7,
+    "product": 17,
+    "quantity": 25,
+    "unit_cost": "12000.00"
+  }
+},
+{
+  "model": "stock.stockinitem",
+  "pk": 16,
+  "fields": {
+    "stock_in": 7,
+    "product": 18,
+    "quantity": 12,
+    "unit_cost": "95000.00"
+  }
+},
+{
+  "model": "stock.stockinitem",
+  "pk": 17,
+  "fields": {
+    "stock_in": 8,
+    "product": 13,
+    "quantity": 30,
+    "unit_cost": "150000.00"
+  }
+},
+{
+  "model": "stock.stockinitem",
+  "pk": 18,
+  "fields": {
+    "stock_in": 8,
+    "product": 14,
+    "quantity": 20,
+    "unit_cost": "210000.00"
+  }
+},
+{
+  "model": "stock.stockout",
+  "pk": 1,
+  "fields": {
+    "reference": "SOUT-20260626-0001",
+    "reason": "damage",
+    "note": "2 tile cartons broke in storage",
+    "created_by": [
+      "absolom@trackora.com"
+    ],
+    "created_at": "2026-06-26T11:12:09.371Z"
+  }
+},
+{
+  "model": "stock.stockoutitem",
+  "pk": 1,
+  "fields": {
+    "stock_out": 1,
+    "product": 10,
+    "quantity": 2
+  }
+},
+{
+  "model": "sales.customer",
+  "pk": 1,
+  "fields": {
+    "name": "John Okello",
+    "phone": "0772 123456",
+    "email": "john.okello@gmail.com",
+    "address": "Nakawa, Kampala",
+    "created_at": "2026-06-26T11:11:41.582Z",
+    "updated_at": "2026-06-26T11:11:41.582Z"
+  }
+},
+{
+  "model": "sales.customer",
+  "pk": 2,
+  "fields": {
+    "name": "Sarah Nakato",
+    "phone": "0701 987654",
+    "email": "sarahn@gmail.com",
+    "address": "Ntinda, Kampala",
+    "created_at": "2026-06-26T11:11:45.332Z",
+    "updated_at": "2026-06-26T11:11:45.332Z"
+  }
+},
+{
+  "model": "sales.customer",
+  "pk": 3,
+  "fields": {
+    "name": "Kampala Builders Ltd",
+    "phone": "0414 200300",
+    "email": "procurement@kbuilders.co.ug",
+    "address": "Industrial Area, Kampala",
+    "created_at": "2026-06-26T11:11:48.944Z",
+    "updated_at": "2026-06-26T11:11:48.944Z"
+  }
+},
+{
+  "model": "sales.customer",
+  "pk": 4,
+  "fields": {
+    "name": "Mukasa Construction Co",
+    "phone": "0772 555888",
+    "email": "mukasaconstruction@gmail.com",
+    "address": "Mukono",
+    "created_at": "2026-06-26T11:11:53.357Z",
+    "updated_at": "2026-06-26T11:11:53.357Z"
+  }
+},
+{
+  "model": "sales.customer",
+  "pk": 5,
+  "fields": {
+    "name": "Najjera Hardware Retailers",
+    "phone": "0758 334455",
+    "email": "najjerahardware@gmail.com",
+    "address": "Najjera, Wakiso",
+    "created_at": "2026-06-26T11:11:55.510Z",
+    "updated_at": "2026-06-26T11:11:55.510Z"
+  }
+},
+{
+  "model": "sales.order",
+  "pk": 1,
+  "fields": {
+    "reference": "ORD-20260626-0001",
+    "customer": 1,
+    "status": "completed",
+    "payment_method": "cash",
+    "discount": "0.00",
+    "note": "",
+    "created_by": [
+      "absolom@trackora.com"
+    ],
+    "created_at": "2026-06-26T11:12:02.167Z",
+    "updated_at": "2026-06-26T11:12:02.167Z"
+  }
+},
+{
+  "model": "sales.order",
+  "pk": 2,
+  "fields": {
+    "reference": "ORD-20260626-0002",
+    "customer": 3,
+    "status": "completed",
+    "payment_method": "bank",
+    "discount": "20000.00",
+    "note": "",
+    "created_by": [
+      "absolom@trackora.com"
+    ],
+    "created_at": "2026-06-26T11:12:04.669Z",
+    "updated_at": "2026-06-26T11:12:04.669Z"
+  }
+},
+{
+  "model": "sales.order",
+  "pk": 3,
+  "fields": {
+    "reference": "ORD-20260626-0003",
+    "customer": null,
+    "status": "completed",
+    "payment_method": "mobile",
+    "discount": "0.00",
+    "note": "",
+    "created_by": [
+      "absolom@trackora.com"
+    ],
+    "created_at": "2026-06-26T11:12:07.067Z",
+    "updated_at": "2026-06-26T11:12:07.067Z"
+  }
+},
+{
+  "model": "sales.orderitem",
+  "pk": 1,
+  "fields": {
+    "order": 1,
+    "product": 1,
+    "quantity": 5,
+    "unit_price": "33000.00",
+    "unit_cost": "28000.00"
+  }
+},
+{
+  "model": "sales.orderitem",
+  "pk": 2,
+  "fields": {
+    "order": 1,
+    "product": 3,
+    "quantity": 2,
+    "unit_price": "45000.00",
+    "unit_cost": "38000.00"
+  }
+},
+{
+  "model": "sales.orderitem",
+  "pk": 3,
+  "fields": {
+    "order": 2,
+    "product": 1,
+    "quantity": 50,
+    "unit_price": "33000.00",
+    "unit_cost": "28000.00"
+  }
+},
+{
+  "model": "sales.orderitem",
+  "pk": 4,
+  "fields": {
+    "order": 2,
+    "product": 4,
+    "quantity": 20,
+    "unit_price": "60000.00",
+    "unit_cost": "52000.00"
+  }
+},
+{
+  "model": "sales.orderitem",
+  "pk": 5,
+  "fields": {
+    "order": 2,
+    "product": 16,
+    "quantity": 100,
+    "unit_price": "2500.00",
+    "unit_cost": "1500.00"
+  }
+},
+{
+  "model": "sales.orderitem",
+  "pk": 6,
+  "fields": {
+    "order": 3,
+    "product": 5,
+    "quantity": 1,
+    "unit_price": "55000.00",
+    "unit_cost": "45000.00"
+  }
+},
+{
+  "model": "sales.orderitem",
+  "pk": 7,
+  "fields": {
+    "order": 3,
+    "product": 11,
+    "quantity": 3,
+    "unit_price": "7000.00",
+    "unit_cost": "5000.00"
+  }
+},
+{
+  "model": "sales.orderitem",
+  "pk": 8,
+  "fields": {
+    "order": 3,
+    "product": 17,
+    "quantity": 1,
+    "unit_price": "18000.00",
+    "unit_cost": "12000.00"
+  }
+}
+]

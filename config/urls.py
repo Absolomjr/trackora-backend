@@ -24,6 +24,9 @@ urlpatterns = [
 
     # Reporting
     path('api/reports/', include('apps.reports.urls')),
+
+    # Public marketing site (landing-page account & demo requests)
+    path('api/', include('apps.leads.urls')),
 ]
 
 if settings.DEBUG:
