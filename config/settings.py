@@ -160,6 +160,7 @@ REST_FRAMEWORK = {
     # throttle narrowly rather than opening a global anon rate.
     'DEFAULT_THROTTLE_RATES': {
         'lead': os.getenv('LEAD_THROTTLE_RATE', '10/hour'),
+        'password_reset': os.getenv('PASSWORD_RESET_THROTTLE_RATE', '5/hour'),
     },
 }
 
@@ -184,6 +185,30 @@ CORS_ALLOW_CREDENTIALS = True
 # Trusted origins for Django's CSRF protection (e.g. the admin login over HTTPS).
 # Must include the scheme, e.g. https://trackora-api.onrender.com
 CSRF_TRUSTED_ORIGINS = env_list('CSRF_TRUSTED_ORIGINS', '')
+
+
+# -----------------------------------------------------------------------------
+# Email (password reset + notifications)
+# -----------------------------------------------------------------------------
+# Defaults to the console backend so password reset works in development without
+# any SMTP credentials (the email is printed to the server log). In production,
+# set EMAIL_HOST/EMAIL_HOST_USER/EMAIL_HOST_PASSWORD and Django switches to SMTP.
+if os.getenv('EMAIL_HOST'):
+    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+else:
+    EMAIL_BACKEND = os.getenv(
+        'EMAIL_BACKEND', 'django.core.mail.backends.console.EmailBackend'
+    )
+
+EMAIL_HOST = os.getenv('EMAIL_HOST', '')
+EMAIL_PORT = int(os.getenv('EMAIL_PORT', '587'))
+EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER', '')
+EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD', '')
+EMAIL_USE_TLS = env_bool('EMAIL_USE_TLS', 'True')
+DEFAULT_FROM_EMAIL = os.getenv('DEFAULT_FROM_EMAIL', 'Trackora <no-reply@trackora.app>')
+
+# Public site URL, used to build links (e.g. password-reset) in emails.
+FRONTEND_URL = os.getenv('FRONTEND_URL', 'http://localhost:5173')
 
 
 # -----------------------------------------------------------------------------

@@ -63,6 +63,24 @@ class ChangePasswordSerializer(serializers.Serializer):
         return value
 
 
+class PasswordResetRequestSerializer(serializers.Serializer):
+    """Accepts an email. Always validates — the view never reveals whether the
+    address is registered, to avoid leaking which emails have accounts."""
+
+    email = serializers.EmailField(required=True)
+
+    def validate_email(self, value):
+        return value.strip().lower()
+
+
+class PasswordResetConfirmSerializer(serializers.Serializer):
+    uid = serializers.CharField(required=True)
+    token = serializers.CharField(required=True)
+    new_password = serializers.CharField(
+        required=True, validators=[validate_password]
+    )
+
+
 class CustomTokenObtainPairSerializer(TokenObtainPairSerializer):
     """Adds user info + role into the login response and token claims."""
 
