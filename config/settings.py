@@ -182,6 +182,15 @@ CORS_ALLOWED_ORIGINS = env_list(
 )
 CORS_ALLOW_CREDENTIALS = True
 
+# In development, allow any localhost/127.0.0.1 port so the Vite dev server
+# works even when it falls back to 5174/5175/etc. (production stays locked to
+# the explicit CORS_ALLOWED_ORIGINS above).
+if DEBUG:
+    CORS_ALLOWED_ORIGIN_REGEXES = [
+        r'^http://localhost:\d+$',
+        r'^http://127\.0\.0\.1:\d+$',
+    ]
+
 # Trusted origins for Django's CSRF protection (e.g. the admin login over HTTPS).
 # Must include the scheme, e.g. https://trackora-api.onrender.com
 CSRF_TRUSTED_ORIGINS = env_list('CSRF_TRUSTED_ORIGINS', '')
@@ -209,6 +218,9 @@ DEFAULT_FROM_EMAIL = os.getenv('DEFAULT_FROM_EMAIL', 'Trackora <no-reply@trackor
 
 # Public site URL, used to build links (e.g. password-reset) in emails.
 FRONTEND_URL = os.getenv('FRONTEND_URL', 'http://localhost:5173')
+
+# Password-reset links expire after 15 minutes (matches the UI copy).
+PASSWORD_RESET_TIMEOUT = int(os.getenv('PASSWORD_RESET_TIMEOUT', '900'))
 
 
 # -----------------------------------------------------------------------------

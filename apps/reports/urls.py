@@ -7,9 +7,11 @@ from .views import (
     LowStockReportView,
     MonthlySalesReportView,
     ProfitReportView,
+    RoleOverviewView,
 )
 
 urlpatterns = [
+    path('overview/', RoleOverviewView.as_view(), name='report-overview'),
     path('dashboard/', DashboardView.as_view(), name='report-dashboard'),
     path('low-stock/', LowStockReportView.as_view(), name='report-low-stock'),
     path('daily-sales/', DailySalesReportView.as_view(), name='report-daily-sales'),
